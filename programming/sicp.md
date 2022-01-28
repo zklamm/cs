@@ -20,6 +20,27 @@ In this chapter we will deal only with simple numerical data so that we can focu
 
 #### 1.1.1—Expressions
 
+Examples of _combinations_:
+
+```
+(+ 21 35 12 7)
+75
+(- 1000 334)
+666
+(+ 2.7 10)
+12.7
+```
+
+Nested expressions (which here are pretty-printed):
+
+```
+(+ (* 3
+      (+ (* 2 4)
+         (+ 3 5)))
+   (+ (- 10 7)
+      6))
+```
+
 #### 1.1.2—Naming and the Environment
 
 #### 1.1.3—Evaluating Combinations
