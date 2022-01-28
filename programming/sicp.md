@@ -43,6 +43,10 @@ Nested expressions (which here are pretty-printed):
 
 #### 1.1.2—Naming and the Environment
 
+`(define size 2)` causes the interpreter to associate the value 2 with the name `size`
+
+The memory that keeps track of the name-object pairs is called the _environment_ (more precisely the _global envrionment_, since we will see later that a computation may involve a number of different environments)
+
 #### 1.1.3—Evaluating Combinations
 
 #### 1.1.4—Compound Procedures
