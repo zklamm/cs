@@ -45,7 +45,7 @@ Nested expressions (which here are pretty-printed):
 
 `(define size 2)` causes the interpreter to associate the value 2 with the name `size`
 
-The memory that keeps track of the name-object pairs is called the _environment_ (more precisely the _global envrionment_, since we will see later that a computation may involve a number of different environments)
+The memory that keeps track of the name-object pairs is called the _environment_ (more precisely the _global environment_, since we will see later that a computation may involve a number of different environments)
 
 #### 1.1.3—Evaluating Combinations
 
@@ -61,6 +61,24 @@ Notice that the evaluation rule given above does not handle definitions. (That i
 Such exceptions to the general evaluation rule are called _special forms_. Each special form has its own evaluation rule.
 
 #### 1.1.4—Compound Procedures
+
+_procedure definitions_ is a powerful abstraction technique by which a compound operation can be given a name and then referred to as a unit.
+
+The general form of a procedure definition is `(define (<name> <formal parameters>) <body>)`
+
+We can use procedures as building blocks in defining other procedures:
+
+```
+(define (square x) (* x x))
+
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+
+(define (f a)
+  (sum-of-squares (+ a 1) (* a 2)))
+
+Compound procedures are used in exactly the same way as primitive procedures.
+```
 
 #### 1.1.5—The Substitution Model for Procedure Application
 
