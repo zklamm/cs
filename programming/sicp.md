@@ -49,6 +49,17 @@ The memory that keeps track of the name-object pairs is called the _environment_
 
 #### 1.1.3—Evaluating Combinations
 
+To evaluate a combination, do the following:
+
+1. Evaluate the subexpressions of the combination.
+2. Apply the procedure that is the value of the leftmost subexpression (the operator) to the arguments that are the values of the other subexpressions (the operands).
+
+Thus, the evaluation rule is _recursive_ in nature.
+
+Notice that the evaluation rule given above does not handle definitions. (That is, `(define x 3)` is not a combination.)
+
+Such exceptions to the general evaluation rule are called _special forms_. Each special form has its own evaluation rule.
+
 #### 1.1.4—Compound Procedures
 
 #### 1.1.5—The Substitution Model for Procedure Application
