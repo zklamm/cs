@@ -77,10 +77,32 @@ We can use procedures as building blocks in defining other procedures:
 (define (f a)
   (sum-of-squares (+ a 1) (* a 2)))
 
-Compound procedures are used in exactly the same way as primitive procedures.
 ```
 
+Compound procedures are used in exactly the same way as primitive procedures.
+
 #### 1.1.5—The Substitution Model for Procedure Application
+
+- To apply a compound procedure to arguments, evaluate the body of the procedure with each formal parater replaced by the corresponding argument.
+
+```
+(f 5)
+(sum-of-squares (+ a 1) (* a 2))
+<!-- Then we replace the formal parameter a by the argument 5: -->
+(sum-of-squares (+ 5 1) (* 5 2))
+(+ (square 6) (square 10))
+(+ (* 6 6) (* 10 10))
+(+ 36 100)
+136
+```
+
+This process is called the _substitution model_ for procedure application.
+
+- The purpose of the substitution is to help us think about procedure application, not to provide a description of how the interpreter really works.
+
+An alternative evaluation model would not evaluate the operands until their values were needed.
+
+This alternative is known as _normal-order evaluation_, in contrast to the "evaluate the arguments and then apply" method that the interpreter actually uses, which is called _applicative-order evaluation_.
 
 #### 1.1.6—Conditional Expressions and Predicates
 
